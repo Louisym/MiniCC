@@ -1,6 +1,6 @@
 <div align="center">
 
-# Mini-Claude-Code
+# MiniCC
 
 **从源码学习 Claude Code，手写一个属于你自己的 AI Code Agent**
 
