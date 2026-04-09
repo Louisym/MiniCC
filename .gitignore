@@ -4,8 +4,11 @@ archive/
 .clawd-agents/
 
 # Claude Code local artifacts
-.claude/settings.local.json
-.claude/sessions/
+.claude/
+
+# Only track demo.png in assets
+assets/*
+!assets/demo.png
 
 # API keys and secrets
 .env
@@ -20,5 +23,3 @@ venv/
 CLAUDE.md
 my_handbook.md
 
-# Root README (user will write their own)
-/README.md
