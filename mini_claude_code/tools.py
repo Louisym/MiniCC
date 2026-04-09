@@ -5,17 +5,18 @@ from typing import Callable
 class ToolRegistry:
     def __init__(self):
         self._handlers: dict[str, Callable] = {}
-    def register(self, name:str, handler:Callable):
+
+    def register(self, name: str, handler: Callable) -> "ToolRegistry":
         if name in self._handlers:
-            return f'The tool: {name} has been registered'
-            
+            raise ValueError(f"Tool already registered: {name}")
         self._handlers[name] = handler
         return self
-    def execute(self, name:str, tool_input_json:str):
-        if name not in self._handlers:
-            return f'tool:{name} has not been registered yet'
-        tool = self._handlers.get(name, None)
-        return tool(tool_input_json)
+
+    def execute(self, name: str, tool_input_json: str) -> str:
+        handler = self._handlers.get(name)
+        if handler is None:
+            raise KeyError(f"Unknown tool: {name}")
+        return handler(tool_input_json)
 
 def bash_tool(input_json:str):
     data = json.loads(input_json)
