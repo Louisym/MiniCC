@@ -2,6 +2,23 @@ __pycache__/
 archive/
 .omx/
 .clawd-agents/
+
 # Claude Code local artifacts
 .claude/settings.local.json
 .claude/sessions/
+
+# API keys and secrets
+.env
+*.env
+.env.*
+
+# Python virtual environments
+.venv/
+venv/
+
+# Private notes
+CLAUDE.md
+my_handbook.md
+
+# Root README (user will write their own)
+/README.md

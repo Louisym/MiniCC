@@ -1,191 +1,163 @@
-# Rewriting Project Claw Code
+<div align="center">
 
-<p align="center">
-  <strong>⭐ The fastest repo in history to surpass 50K stars, reaching the milestone in just 2 hours after publication ⭐</strong>
+# Mini-Claude-Code
+
+**从源码学习 Claude Code，手写一个属于你自己的 AI Code Agent**
+
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)](https://python.org)
+[![Anthropic](https://img.shields.io/badge/Anthropic-Claude_API-6B4FBB?logo=anthropic&logoColor=white)](https://docs.anthropic.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/Louisym/Claude-code-source-code/pulls)
+
+<!-- 
+  在这里放你的 mini claude code 运行截图 
+  步骤：
+  1. 运行 python3 -m mini_claude_code，截图终端画面
+  2. 保存到 assets/demo.png (先创建 assets/ 目录)
+  3. 取消下面这行的注释：
+-->
+<img src="assets/demo.png" alt="Mini Claude Code Demo" width="700">
+
+<p>
+<a href="#快速开始">快速开始</a> &nbsp;|&nbsp;
+<a href="#项目结构">项目结构</a> &nbsp;|&nbsp;
+<a href="#怎么用这个项目">学习路线</a> &nbsp;|&nbsp;
+<a href="#致谢">致谢</a>
 </p>
 
-<p align="center">
-  <a href="https://star-history.com/#instructkr/claw-code&Date">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=instructkr/claw-code&type=Date&theme=dark" />
-      <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=instructkr/claw-code&type=Date" />
-      <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=instructkr/claw-code&type=Date" width="600" />
-    </picture>
-  </a>
-</p>
-
-<p align="center">
-  <img src="assets/clawd-hero.jpeg" alt="Claw" width="300" />
-</p>
-
-<p align="center">
-  <strong>Better Harness Tools, not merely storing the archive of leaked Claude Code</strong>
-</p>
-
-<p align="center">
-  <a href="https://github.com/sponsors/instructkr"><img src="https://img.shields.io/badge/Sponsor-%E2%9D%A4-pink?logo=github&style=for-the-badge" alt="Sponsor on GitHub" /></a>
-</p>
-
-> [!IMPORTANT]
-> **Rust port is now in progress** on the [`dev/rust`](https://github.com/instructkr/claw-code/tree/dev/rust) branch and is expected to be merged into main today. The Rust implementation aims to deliver a faster, memory-safe harness runtime. Stay tuned — this will be the definitive version of the project.
-
-> If you find this work useful, consider [sponsoring @instructkr on GitHub](https://github.com/sponsors/instructkr) to support continued open-source harness engineering research.
+</div>
 
 ---
 
-## Backstory
-
-At 4 AM on March 31, 2026, I woke up to my phone blowing up with notifications. The Claude Code source had been exposed, and the entire dev community was in a frenzy. My girlfriend in Korea was genuinely worried I might face legal action from Anthropic just for having the code on my machine — so I did what any engineer would do under pressure: I sat down, ported the core features to Python from scratch, and pushed it before the sun came up.
-
-The whole thing was orchestrated end-to-end using [oh-my-codex (OmX)](https://github.com/Yeachan-Heo/oh-my-codex) by [@bellman_ych](https://x.com/bellman_ych) — a workflow layer built on top of OpenAI's Codex ([@OpenAIDevs](https://x.com/OpenAIDevs)). I used `$team` mode for parallel code review and `$ralph` mode for persistent execution loops with architect-level verification. The entire porting session — from reading the original harness structure to producing a working Python tree with tests — was driven through OmX orchestration.
-
-The result is a clean-room Python rewrite that captures the architectural patterns of Claude Code's agent harness without copying any proprietary source. I'm now actively collaborating with [@bellman_ych](https://x.com/bellman_ych) — the creator of OmX himself — to push this further. The basic Python foundation is already in place and functional, but we're just getting started. **Stay tuned — a much more capable version is on the way.**
-
-https://github.com/instructkr/claw-code
-
-![Tweet screenshot](assets/tweet-screenshot.png)
-
-## The Creators Featured in Wall Street Journal For Avid Claude Code Fans
-
-I've been deeply interested in **harness engineering** — studying how agent systems wire tools, orchestrate tasks, and manage runtime context. This isn't a sudden thing. The Wall Street Journal featured my work earlier this month, documenting how I've been one of the most active power users exploring these systems:
-
-> AI startup worker Sigrid Jin, who attended the Seoul dinner, single-handedly used 25 billion of Claude Code tokens last year. At the time, usage limits were looser, allowing early enthusiasts to reach tens of billions of tokens at a very low cost.
+> 跟随本项目，你将学习 Claude Code 源码，了解当前 SOTA harness engineering 的核心问题与解决方案。
 >
-> Despite his countless hours with Claude Code, Jin isn't faithful to any one AI lab. The tools available have different strengths and weaknesses, he said. Codex is better at reasoning, while Claude Code generates cleaner, more shareable code.
->
-> Jin flew to San Francisco in February for Claude Code's first birthday party, where attendees waited in line to compare notes with Cherny. The crowd included a practicing cardiologist from Belgium who had built an app to help patients navigate care, and a California lawyer who made a tool for automating building permit approvals using Claude Code.
->
-> "It was basically like a sharing party," Jin said. "There were lawyers, there were doctors, there were dentists. They did not have software engineering backgrounds."
->
-> — *The Wall Street Journal*, March 21, 2026, [*"The Trillion Dollar Race to Automate Our Entire Lives"*](https://lnkd.in/gs9td3qd)
+> 你会先从 **19 个教学 demo** 中一步一步学习关键技术；然后跟随指引，**手动从零搭建一个自己的 mini Claude Code**。
 
-![WSJ Feature](assets/wsj-feature.png)
+## 项目背景
 
----
+不同于 GitHub 上其他复杂庞大的 Claude Code 源码解析资料，本项目更适合广大初学者、学生，旨在由浅入深帮助大家理解 Claude Code 的设计哲学：
 
-## Porting Status
+| | 问题 | 回答 |
+|---|------|------|
+| 1 | 为什么想拆解 Claude Code？ | Claude Code 作为目前最强大的 Code Agent 系统，其 harness engineering 的设计非常值得学习。通过学习它，我们可以见微知著，弄清 SOTA harness engineering 应该往什么方向走。 |
+| 2 | 市面上的教程有什么不足？ | 现有资料要么太过繁杂冗长，要么缺少实践巩固。而本项目不仅以**代码的形式教概念**，还会让你**一步一步手写一个属于自己的 mini Claude Code**！ |
+| 3 | 你希望读者获得什么？ | 不仅仅是了解概念/设计，更要模仿 CC 源码，用 Python 实现一个自己的 Claude Code！**Talk is cheap, show me your code!** |
 
-The main source tree is now Python-first.
+## 项目结构
 
-- `src/` contains the active Python porting workspace
-- `tests/` verifies the current Python workspace
-- the exposed snapshot is no longer part of the tracked repository state
-
-The current Python workspace is not yet a complete one-to-one replacement for the original system, but the primary implementation surface is now Python.
-
-## Why this rewrite exists
-
-I originally studied the exposed codebase to understand its harness, tool wiring, and agent workflow. After spending more time with the legal and ethical questions—and after reading the essay linked below—I did not want the exposed snapshot itself to remain the main tracked source tree.
-
-This repository now focuses on Python porting work instead.
-
-## Repository Layout
-
-```text
+```
 .
-├── src/                                # Python porting workspace
-│   ├── __init__.py
-│   ├── commands.py
-│   ├── main.py
-│   ├── models.py
-│   ├── port_manifest.py
-│   ├── query_engine.py
-│   ├── task.py
-│   └── tools.py
-├── tests/                              # Python verification
-├── assets/omx/                         # OmX workflow screenshots
-├── 2026-03-09-is-legal-the-same-as-legitimate-ai-reimplementation-and-the-erosion-of-copyleft.md
-└── README.md
+├── tutorials/                 # 19 个 Python 教学 demo，由浅入深讲解 CC 核心概念
+├── mini_claude_code/          # 手写的 mini 版 Claude Code (Python)
+│   ├── guides/                # 13 个模块的学习引导，手把手教你每步怎么写
+│   ├── models.py ~ main.py   # 13 个可供参考的实现文件（答案）
+│   └── .env                   # API key（不会上传）
+├── rust/                      # Claude Code 原始 Rust 源码（供对照阅读）
+└── reference/                 # 源码分析参考笔记，感谢 github/openedclaude
 ```
 
-## Python Workspace Overview
+## Tutorials 速览
 
-The new Python `src/` tree currently provides:
+19 个独立可运行的教学 demo，每个文件聚焦一个核心概念：
 
-- **`port_manifest.py`** — summarizes the current Python workspace structure
-- **`models.py`** — dataclasses for subsystems, modules, and backlog state
-- **`commands.py`** — Python-side command port metadata
-- **`tools.py`** — Python-side tool port metadata
-- **`query_engine.py`** — renders a Python porting summary from the active workspace
-- **`main.py`** — a CLI entrypoint for manifest and summary output
+| # | 文件 | 主题 | 你会学到什么 |
+|---|------|------|-------------|
+| 01 | `agentic_loop_basics.py` | Agentic Loop 基础 | Agent 的心脏——感知-思考-行动循环 |
+| 02 | `session_and_messages.py` | Session 与消息模型 | AI 的记忆系统，消息如何建模 |
+| 03 | `tool_system.py` | Tool System | AI 的工具箱，注册/发现/执行 |
+| 04 | `permission_system.py` | Permission System | 安全阀门，分级授权 |
+| 05 | `agentic_loop_complete.py` | 完整 Agentic Loop | 整合前 4 个教程，跑通全流程 |
+| 06 | `system_prompt_builder.py` | System Prompt Builder | 给 AI 写"角色说明书" |
+| 07 | `auto_compaction.py` | Auto Compaction | AI 的"记忆压缩"，Token 管理 |
+| 08 | `hook_system.py` | Hook System | 工具执行的"保安和监控" |
+| 09 | `config_system.py` | Config System | 多层配置加载与深合并 |
+| 10 | `sse_streaming.py` | SSE Streaming | 流式输出的秘密 |
+| 11 | `error_recovery_and_retry.py` | 错误恢复与重试 | Agent 活下来的关键 |
+| 12 | `session_persistence.py` | 会话持久化 | JSONL 追加式存储 |
+| 13 | `multi_agent_coordination.py` | 多 Agent 协调 | 从独奏到交响乐 |
+| 14 | `bash_engine_deep_dive.py` | Bash 执行引擎 | 子进程管理与安全执行 |
+| 14a | `os_isolation_primer.py` | 操作系统隔离基础 | 沙箱的前置知识 |
+| 14b | `networking_for_engineers.py` | 工程师网络知识 | 网络通信基础 |
+| 15 | `permission_and_hook_pipeline.py` | 权限与 Hook 流水线 | 七层安全管线深度剖析 |
+| 16 | `prompt_building_and_compaction.py` | 提示词构建与压缩 | 上下文工程深度剖析 |
+| 17 | `async_await_for_sse.py` | async/await | 流式 API 的 Python 基础 |
+| 18 | `design_patterns_for_agents.py` | Agent 设计模式 | 策略/观察者/责任链等模式 |
+| 19 | `process_and_pipe_communication.py` | 进程与管道通信 | stdin/stdout/pipe 实战 |
 
-## Quickstart
+## Mini Claude Code 模块速览
 
-Render the Python porting summary:
+13 个模块，按依赖顺序排列，每个都忠实还原 CC Rust 源码的工程模式：
+
+| # | 模块 | 对应 CC 源码 | 核心模式 |
+|---|------|-------------|---------|
+| 01 | `models.py` | session.rs | Discriminated Union |
+| 02 | `tools.py` | tools/lib.rs | ToolRegistry + DI |
+| 03 | `api_client.py` | api/client.rs | 流式事件 + 消息格式转换 |
+| 04 | `config.py` | config.rs | 5-source 链 + 递归深合并 |
+| 05 | `permissions.py` | permissions.rs | IntEnum 层级 + Protocol 回调 |
+| 06 | `hooks.py` | hooks.rs | 退出码协议 (0/2/other) |
+| 07 | `retry.py` | client.rs | 指数退避 + 溢出保护 |
+| 08 | `prompt.py` | prompt.rs | 祖先链发现 + 预算截断 |
+| 09 | `compact.py` | compact.rs | Token 估算 + 结构化摘要 |
+| 10 | `storage.py` | sessionStorage.ts | JSONL 追加 + UUID 链 |
+| 11 | `multi_agent.py` | tools/lib.rs | 泛型 spawn_fn + 工具白名单 |
+| 12 | `runtime.py` | conversation.rs | Agentic Loop + 三层防线 |
+| 13 | `main.py` | main.rs | 组装点 + REPL + Slash 命令 |
+
+## 快速开始
 
 ```bash
-python3 -m src.main summary
+# 1. 克隆项目
+git clone https://github.com/Louisym/Claude-code-source-code.git
+cd Claude-code-source-code
+
+# 2. 安装依赖
+pip install pydantic anthropic python-dotenv
+
+# 3. 配置 API Key
+echo "ANTHROPIC_API_KEY=sk-ant-xxx" > mini_claude_code/.env
+
+# 4. 运行！
+python3 -m mini_claude_code
 ```
 
-Print the current Python workspace manifest:
+## 怎么用这个项目？
+
+### 路线一：从理解概念开始，到手写巩固
+
+1. 从 `tutorials/` 开始，由浅入深学习概念，每章都有对应源码
+2. 进入 `mini_claude_code/`，阅读 README.md，开始动手写
+3. 每个 guide 包含：问题背景 → CC 源码分析 → 要写什么 → 易错点
+4. 自己实现后，对照同名 `.py` 文件检查
+5. 按 01 → 13 顺序走完，你就有了一个能跑的 Agent
+
+### 路线二：只看概念
+
+阅读 `tutorials/`，快速了解 Claude Code 的精华设计。
+
+### 路线三：先跑起来，再拆解
 
 ```bash
-python3 -m src.main manifest
+python3 -m mini_claude_code
 ```
 
-List the current Python modules:
+然后逐步根据功能，倒回去看 `mini_claude_code/` 中对应的代码实现。
 
-```bash
-python3 -m src.main subsystems --limit 16
-```
+## 前置知识
 
-Run verification:
+- Python 基础（class, decorator, type hint）
+- 了解 Pydantic 的 BaseModel
+- 不需要会 Rust（所有 Rust 代码都有 Python 对照）
 
-```bash
-python3 -m unittest discover -s tests -v
-```
+## 致谢
 
-Run the parity audit against the local ignored archive (when present):
-
-```bash
-python3 -m src.main parity-audit
-```
-
-Inspect mirrored command/tool inventories:
-
-```bash
-python3 -m src.main commands --limit 10
-python3 -m src.main tools --limit 10
-```
-
-## Current Parity Checkpoint
-
-The port now mirrors the archived root-entry file surface, top-level subsystem names, and command/tool inventories much more closely than before. However, it is **not yet** a full runtime-equivalent replacement for the original TypeScript system; the Python tree still contains fewer executable runtime slices than the archived source.
-
-
-## Built with `oh-my-codex`
-
-The restructuring and documentation work on this repository was AI-assisted and orchestrated with Yeachan Heo's [oh-my-codex (OmX)](https://github.com/Yeachan-Heo/oh-my-codex), layered on top of Codex.
-
-- **`$team` mode:** used for coordinated parallel review and architectural feedback
-- **`$ralph` mode:** used for persistent execution, verification, and completion discipline
-- **Codex-driven workflow:** used to turn the main `src/` tree into a Python-first porting workspace
-
-### OmX workflow screenshots
-
-![OmX workflow screenshot 1](assets/omx/omx-readme-review-1.png)
-
-*Ralph/team orchestration view while the README and essay context were being reviewed in terminal panes.*
-
-![OmX workflow screenshot 2](assets/omx/omx-readme-review-2.png)
-
-*Split-pane review and verification flow during the final README wording pass.*
-
-## Community
-
-<p align="center">
-  <a href="https://instruct.kr/"><img src="assets/instructkr.png" alt="instructkr" width="400" /></a>
-</p>
-
-Join the [**instructkr Discord**](https://instruct.kr/) — the best Korean language model community. Come chat about LLMs, harness engineering, agent workflows, and everything in between.
-
-[![Discord](https://img.shields.io/badge/Join%20Discord-instruct.kr-5865F2?logo=discord&style=for-the-badge)](https://instruct.kr/)
+感谢 [openedclaude](https://github.com/openedclaude/claude-reviews-claude) 对源码的精细拆解，是本项目的交叉验证来源。
 
 ## Star History
 
-See the chart at the top of this README.
+<!-- 项目发布到 GitHub 后，取消下面的注释，替换成你的仓库地址 -->
+<!-- [![Star History Chart](https://api.star-history.com/svg?repos=Louisym/Claude-code-source-code&type=Date)](https://star-history.com/#Louisym/Claude-code-source-code&Date) -->
 
-## Ownership / Affiliation Disclaimer
+## License
 
-- This repository does **not** claim ownership of the original Claude Code source material.
-- This repository is **not affiliated with, endorsed by, or maintained by Anthropic**.
+本项目采用 [MIT License](LICENSE) 开源。
