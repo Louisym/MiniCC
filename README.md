@@ -7,7 +7,7 @@
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)](https://python.org)
 [![Anthropic](https://img.shields.io/badge/Anthropic-Claude_API-6B4FBB?logo=anthropic&logoColor=white)](https://docs.anthropic.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/Louisym/Claude-code-source-code/pulls)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/Louisym/MiniCC/pulls)
 
 <!-- 
   在这里放你的 mini claude code 运行截图 
@@ -155,8 +155,7 @@ python3 -m mini_claude_code
 
 ## Star History
 
-<!-- 项目发布到 GitHub 后，取消下面的注释，替换成你的仓库地址 -->
-<!-- [![Star History Chart](https://api.star-history.com/svg?repos=Louisym/Claude-code-source-code&type=Date)](https://star-history.com/#Louisym/Claude-code-source-code&Date) -->
+[![Star History Chart](https://api.star-history.com/svg?repos=Louisym/MiniCC&type=Date)](https://star-history.com/#Louisym/MiniCC&Date)
 
 ## License
 
