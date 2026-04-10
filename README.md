@@ -155,7 +155,13 @@ python3 -m mini_claude_code
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=Louisym/MiniCC&type=Date)](https://star-history.com/#Louisym/MiniCC&Date)
+<a href="https://www.star-history.com/?repos=Louisym%2FMiniCC&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=Louisym/MiniCC&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=Louisym/MiniCC&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=Louisym/MiniCC&type=date&legend=top-left" />
+ </picture>
+</a>
 
 ## License
 
